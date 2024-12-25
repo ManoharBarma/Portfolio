@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manohar Barma - Profile</title>
+    <title>Manohar Barma - DevOps Profile</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
+            background-color: #f5f7fa;
             color: #333;
             overflow-x: hidden;
         }
@@ -64,6 +64,12 @@
             margin: 10px 0;
             font-size: 1.1rem;
         }
+        .section img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
         footer {
             text-align: center;
             padding: 15px 0;
@@ -84,25 +90,6 @@
         a:hover {
             color: #00c6ff;
             text-decoration: underline;
-        }
-        .theme-toggle {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background: #0078D7;
-            color: white;
-            transition: background 0.3s;
-            animation: fadeIn 2s;
-        }
-        button:hover {
-            background: #00c6ff;
         }
         @keyframes slideDown {
             from {
@@ -133,35 +120,6 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeButton = document.getElementById('themeButton');
-            let isDark = false;
-
-            function animateButton() {
-                themeButton.classList.add('clicked');
-                setTimeout(() => {
-                    themeButton.classList.remove('clicked');
-                }, 500);
-            }
-
-            themeButton.addEventListener('click', () => {
-                animateButton();
-                if (isDark) {
-                    document.body.style.backgroundColor = '#f0f8ff';
-                    document.body.style.color = '#333';
-                    themeButton.style.backgroundColor = '#0078D7';
-                    themeButton.style.color = 'white';
-                } else {
-                    document.body.style.backgroundColor = '#333';
-                    document.body.style.color = '#f0f8ff';
-                    themeButton.style.backgroundColor = '#00c6ff';
-                    themeButton.style.color = '#333';
-                }
-                isDark = !isDark;
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -170,9 +128,6 @@
         <p>DevOps Engineer | Certified Azure and AWS Professional</p>
     </header>
     <div class="container">
-        <div class="theme-toggle">
-            <button id="themeButton">Toggle Dark Theme</button>
-        </div>
         <div class="section" id="about">
             <h2>💡 About Me</h2>
             <p>Welcome to my GitHub profile! I'm a DevOps Engineer with a strong foundation in automation and cloud technologies. Passionate about automating complex workflows to boost efficiency and always keen to learn the latest trends in DevOps.</p>
@@ -197,6 +152,15 @@
                 <li>DevOps Practices: CI/CD pipelines, YAML scripting, and automation.</li>
                 <li>Cloud Technologies: Proficient in Azure and AWS.</li>
                 <li>Version Control: Git and GitHub for efficient collaboration and code management.</li>
+            </ul>
+        </div>
+        <div class="section" id="tools">
+            <h2>🛠️ DevOps Tools</h2>
+            <ul>
+                <li><img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins Logo"> Jenkins</li>
+                <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker Logo"> Docker</li>
+                <li><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes Logo"> Kubernetes</li>
+                <li><img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform Logo"> Terraform</li>
             </ul>
         </div>
         <div class="section" id="skills">
