@@ -145,6 +145,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .section h2 {
@@ -154,11 +155,11 @@
             color: var(--secondary-color);
         }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        .horizontal-cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         .card {
@@ -166,6 +167,8 @@
             border-radius: 10px;
             padding: 30px;
             transition: transform 0.3s;
+            width: 280px;
+            text-align: center;
         }
 
         .card:hover {
@@ -178,27 +181,38 @@
         }
 
         .card img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
         }
 
-        .card ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .card ul li {
+        .about-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 10px;
+            gap: 20px;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        .card ul li img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
+        .about-content p {
+            max-width: 800px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .about-icons {
+            display: flex;
+            gap: 30px;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .about-icons i {
+            transition: transform 0.3s;
+        }
+
+        .about-icons i:hover {
+            transform: scale(1.2);
         }
 
         .contact {
@@ -231,6 +245,11 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .about-icons {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -261,7 +280,15 @@
     <section id="about" class="section">
         <div class="container" data-aos="fade-right">
             <h2>About Me</h2>
-            <p>DevOps Engineer with expertise in cloud technologies and automation. Passionate about creating efficient, scalable solutions and continuous learning.</p>
+            <div class="about-content">
+                <p>I'm a DevOps Engineer with over 2 years of experience in automating CI/CD pipelines and managing Azure cloud infrastructure. I am proficient in Terraform, Docker, Git, GitHub, and security practices to deliver reliable and scalable solutions. I have extensive experience in Bash scripting with the aid of GitHub Copilot AI and good knowledge of Kubernetes. I am passionate about creating efficient, scalable solutions and continuously learning the latest trends in DevOps.</p>
+                <div class="about-icons">
+                    <i class="fas fa-cloud"></i>
+                    <i class="fas fa-cogs"></i>
+                    <i class="fas fa-code"></i>
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -269,38 +296,34 @@
     <section id="skills" class="section">
         <div class="container" data-aos="fade-left">
             <h2>Technical Skills</h2>
-            <div class="cards-grid">
+            <div class="horizontal-cards-grid">
                 <div class="card" data-aos="zoom-in">
-                    <h3>CI/CD Tools</h3>
-                    <ul>
-                        <li><img src="https://www.vectorlogo.zone/logos/azuredevops/azuredevops-icon.svg" alt="Azure DevOps"> Azure DevOps</li>
-                        <li><img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins"> Jenkins</li>
-                    </ul>
+                    <img src="https://www.vectorlogo.zone/logos/azuredevops/azuredevops-icon.svg" alt="Azure DevOps">
+                    <h3>Azure DevOps</h3>
                 </div>
                 <div class="card" data-aos="zoom-in">
-                    <h3>Infrastructure as Code</h3>
-                    <ul>
-                        <li><img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform"> Terraform</li>
-                    </ul>
+                    <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins">
+                    <h3>Jenkins</h3>
                 </div>
                 <div class="card" data-aos="zoom-in">
-                    <h3>Containerization</h3>
-                    <ul>
-                        <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker"> Docker</li>
-                    </ul>
+                    <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform">
+                    <h3>Terraform</h3>
                 </div>
                 <div class="card" data-aos="zoom-in">
-                    <h3>Version Control</h3>
-                    <ul>
-                        <li><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub"> GitHub</li>
-                        <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git"> Git</li>
-                    </ul>
+                    <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker">
+                    <h3>Docker</h3>
                 </div>
                 <div class="card" data-aos="zoom-in">
-                    <h3>Scripting</h3>
-                    <ul>
-                        <li><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash"> Bash (with GitHub Copilot AI)</li>
-                    </ul>
+                    <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub">
+                    <h3>GitHub</h3>
+                </div>
+                <div class="card" data-aos="zoom-in">
+                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git">
+                    <h3>Git</h3>
+                </div>
+                <div class="card" data-aos="zoom-in">
+                    <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash">
+                    <h3>Bash (with GitHub Copilot AI)</h3>
                 </div>
             </div>
         </div>
@@ -312,7 +335,7 @@
             <h2>Professional Experience</h2>
             <div class="cards-grid">
                 <div class="card" data-aos="zoom-in">
-                    <h3><img src="https://www.vectorlogo.zone/logos/techmahindra/techmahindra-icon.svg" alt="Tech Mahindra"> Tech Mahindra</h3>
+                    <h3><img src="https://www.techmahindra.com/themes/custom/techm/techm_logo.svg" alt="Tech Mahindra" style="height: 30px;"> Tech Mahindra</h3>
                     <p>Azure Cloud & DevOps Engineer — Sept 2022 – Present</p>
                 </div>
             </div>
