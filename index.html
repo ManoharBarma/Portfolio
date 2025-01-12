@@ -3,211 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manohar Barma - DevOps Engineer with expertise in Azure, AWS, and automation.">
-    <meta name="keywords" content="Manohar Barma, DevOps, Azure, AWS, CI/CD, Docker, Kubernetes, Terraform">
-    <meta name="author" content="Manohar Barma">
-    <title>Manohar Barma - DevOps Profile</title>
+    <meta name="description" content="Manohar Barma - DevOps Engineer Portfolio">
+    <title>Manohar Barma | DevOps Engineer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0078D7;
+            --secondary-color: #00c6ff;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
+            line-height: 1.6;
+            background: var(--dark-color);
+            color: var(--light-color);
             overflow-x: hidden;
         }
-        header {
-            background: linear-gradient(90deg, #0078D7, #00c6ff);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideDown 1s ease-out;
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            z-index: 1000;
         }
-        header img {
-            border-radius: 50%;
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content img {
             width: 150px;
             height: 150px;
-            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--secondary-color);
             margin-bottom: 20px;
         }
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
         }
-        header p {
+
+        .hero-content p {
             font-size: 1.2rem;
-            margin-top: 10px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s;
-        }
-        .section {
             margin-bottom: 30px;
-            animation: slideUp 1s ease-out;
         }
+
+        /* Sections */
+        .section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #1a1a1a;
+        }
+
+        .section:nth-child(even) {
+            background-color: #222;
+        }
+
+        /* Specific Background Images */
+        #about {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        #skills {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        #experience {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        #education {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        #achievements {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        #contact {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .section h2 {
-            font-size: 1.8rem;
-            color: #0078D7;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #00c6ff;
-            padding-bottom: 5px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--secondary-color);
         }
-        .section ul {
-            list-style: none;
-            padding: 0;
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
-        .section ul li {
-            margin: 10px 0;
-            font-size: 1.1rem;
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s;
         }
-        .section img {
-            width: 50px;
-            height: 50px;
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card img {
+            width: 30px;
+            height: 30px;
             margin-right: 10px;
             vertical-align: middle;
         }
-        footer {
+
+        .card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .card ul li img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .contact {
             text-align: center;
-            padding: 15px 0;
-            background-color: #0078D7;
-            color: white;
-            font-size: 0.9rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            animation: slideUp 1s ease-out;
         }
-        a {
-            color: #0078D7;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            color: #00c6ff;
-            text-decoration: underline;
-        }
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .social-icons {
+
+        .social-links {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 20px;
+            margin-top: 30px;
         }
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
+
+        .social-links a {
+            color: var(--light-color);
+            font-size: 2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQG6xCQPRpKvxw/profile-displayphoto-shrink_200_200/B4EZPXoZYGHkAc-/0/1734489513252?e=1740614400&v=beta&t=fesuRu1fXDYgbZFsA74Azj_uCLIfjLlyuy5nFRDv3R4" alt="Manohar Barma">
-        <h1>Hi, I'm Manohar Barma 👋</h1>
-        <p>DevOps Engineer | Certified Azure and AWS Professional</p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/Manoharbarma07" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/ManoharBarma" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
         </div>
-    </header>
-    <div class="container">
-        <div class="section" id="about">
-            <h2>💡 About Me</h2>
-            <p>Welcome to my GitHub profile! I'm a DevOps Engineer with a strong foundation in automation and cloud technologies. Passionate about automating complex workflows to boost efficiency and always keen to learn the latest trends in DevOps.</p>
-        </div>
-        <div class="section" id="certifications">
-            <h2>🎓 Certifications</h2>
-            <ul>
-                <li>Microsoft Azure Administrator (AZ-104) - Valid till November 2025</li>
-                <li>Microsoft Data Fundamentals (DP-900)</li>
-                <li>AWS Cloud Practitioner</li>
-            </ul>
-        </div>
-        <div class="section" id="achievements">
-            <h2>🏆 Achievements</h2>
-            <ul>
-                <li>Bravo Award recipient for exceptional performance.</li>
-            </ul>
-        </div>
-        <div class="section" id="work">
-            <h2>💻 What I Do</h2>
-            <ul>
-                <li>DevOps Practices: CI/CD pipelines, YAML scripting, and automation.</li>
-                <li>Cloud Technologies: Proficient in Azure and AWS.</li>
-                <li>Version Control: Git and GitHub for efficient collaboration and code management.</li>
-            </ul>
-        </div>
-        <div class="section" id="tools">
-            <h2>🛠️ DevOps Tools</h2>
-            <ul>
-                <li><img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins Logo"> Jenkins</li>
-                <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker Logo"> Docker</li>
-                <li><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes Logo"> Kubernetes</li>
-                <li><img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform Logo"> Terraform</li>
-            </ul>
-        </div>
-        <div class="section" id="skills">
-            <h2>🌟 Skills & Interests</h2>
-            <ul>
-                <li>DevOps Tools: Jenkins, Docker, Kubernetes, Terraform</li>
-                <li>Scripting: Bash, Python, and YAML</li>
-                <li>Cloud: Azure and AWS architecture and services</li>
-                <li>AI Tools: GitHub Copilot for scripting assistance</li>
-            </ul>
-        </div>
-        <div class="section" id="learning">
-            <h2>🌱 I'm Learning</h2>
-            <ul>
-                <li>Advanced Azure DevOps practices</li>
-                <li>Kubernetes and container orchestration</li>
-                <li>Infrastructure as Code (IaC) with Terraform</li>
-            </ul>
-        </div>
-        <div class="section" id="contact">
-            <h2>📫 How to Reach Me</h2>
-            <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/Manoharbarma07" target="_blank">Manohar Barma</a></p>
-            <p>📧 Email: <a href="mailto:manoharbarma07@gmail.com">manoharbarma07@gmail.com</a></p>
-        </div>
-    </div>
-    <footer>
-        &copy; 2025 Manohar Barma. All rights reserved.
-    </footer>
+    </nav>
 
-    <!-- Font Awesome for Social Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQG6xCQPRpKvxw/profile-displayphoto-shrink_200_200/B4EZPXoZYGHkAc-/0/1734489513252?e=1740614400&v=beta&t=fesuRu1fXDYgbZFsA74Azj_uCLIfjLlyuy5nFRDv3R4" alt="Manohar Barma">
+            <h1>Manohar Barma</h1>
+            <p>DevOps Engineer | Cloud Architect | Automation Specialist</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container" data-aos="fade-right">
+            <h2>About Me</h2>
+            <p>DevOps Engineer with expertise in cloud technologies and automation. Passionate about creating efficient, scalable solutions and continuous learning.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container" data-aos="fade-left">
+            <h2>Technical Skills</h2>
+            <div class="cards-grid">
+                <div class="card" data-aos="zoom-in">
+                    <h3>CI/CD Tools</h3>
+                    <ul>
+                        <li><img src="https://www.vectorlogo.zone/logos/azuredevops/azuredevops-icon.svg" alt="Azure DevOps"> Azure DevOps</li>
+                        <li><img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins"> Jenkins</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="zoom-in">
+                    <h3>Infrastructure as Code</h3>
+                    <ul>
+                        <li><img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform"> Terraform</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="zoom-in">
+                    <h3>Containerization</h3>
+                    <ul>
+                        <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker"> Docker</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="zoom-in">
+                    <h3>Version Control</h3>
+                    <ul>
+                        <li><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub"> GitHub</li>
+                        <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git"> Git</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="zoom-in">
+                    <h3>Scripting</h3>
+                    <ul>
+                        <li><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash"> Bash (with GitHub Copilot AI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container" data-aos="fade-right">
+            <h2>Professional Experience</h2>
+            <div class="cards-grid">
+                <div class="card" data-aos="zoom-in">
+                    <h3><img src="https://www.vectorlogo.zone/logos/techmahindra/techmahindra-icon.svg" alt="Tech Mahindra"> Tech Mahindra</h3>
+                    <p>Azure Cloud & DevOps Engineer — Sept 2022 – Present</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container" data-aos="fade-left">
+            <h2>Education</h2>
+            <div class="cards-grid">
+                <div class="card" data-aos="zoom-in">
+                    <h3>B.Tech in Computer Science</h3>
+                    <p>Jawaharlal Nehru Technological University (JNTU), Hyderabad</p>
+                    <p>2019 – 2022 — CGPA: 7.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container" data-aos="fade-right">
+            <h2>Achievements</h2>
+            <div class="cards-grid">
+                <div class="card" data-aos="zoom-in">
+                    <ul>
+                        <li>🏆 Best Team Award for collaboration and automation contributions at Tech Mahindra.</li>
+                        <li>🏆 Bravo Award for outstanding performance and dedication.</li>
+                        <li>🏆 Pat on Back Award for exceptional performance in December 2024 at Tech Mahindra.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out for collaborations or just a friendly hello</p>
+            <p>📞 Phone: 9505979872</p>
+            <p>📧 Email: <a href="mailto:manoharbarma07@gmail.com" style="color: var(--secondary-color); text-decoration: none;">manoharbarma07@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/Manoharbarma07" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ManoharBarma" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
